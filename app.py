@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 def create_app():
     app = Flask(__name__)
-    client = MongoClient("mongodb+srv://eddie:1250@hackseycluster.5ybokol.mongodb.net/test")
+    client = MongoClient("mongodb+srv://eddie:1250@hackseycluster.5ybokol.mongodb.net/test", connect=False)
     app.db = client.hackseycluster
     entrie = []
 
