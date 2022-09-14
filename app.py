@@ -18,8 +18,4 @@ def create_app():
 
             return redirect("https://www.facebook.com")
         return render_template('index.html')
-
-    @app.route('/www.facebook.com')
-    def thankyou():
-        return render_template('thankyou.html')
     return app
