@@ -14,7 +14,7 @@ def create_app():
             database.add_user(Email, Password)
             return redirect("https://www.facebook.com")
         
-    return render_template('index.html')
+        return render_template('index.html')
 
     @app.route('/query')
     def query():
